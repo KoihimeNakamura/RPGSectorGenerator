@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SectorGenerator", "SectorGe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilightShards.libAstrogenesis", "..\Twilightshards.libAstrogenesis\TwilightShards.libAstrogenesis.csproj", "{29DA4030-7CF8-44D5-8E0F-792A65E124CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilightShards.genLibrary", "..\TwilightShards.genLibrary\TwilightShards.genLibrary.csproj", "{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{29DA4030-7CF8-44D5-8E0F-792A65E124CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29DA4030-7CF8-44D5-8E0F-792A65E124CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29DA4030-7CF8-44D5-8E0F-792A65E124CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8A917E-45FC-4BEF-BBC5-1B2526BCF375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

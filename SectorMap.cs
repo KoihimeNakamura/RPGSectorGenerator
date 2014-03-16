@@ -1,14 +1,18 @@
-﻿using System;
-namespace TwilightShards.SectorGenerator
+﻿namespace TwilightShards.SectorGenerator
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data;
     using System.Drawing;
-    using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
     using System.Windows.Forms;
+
+    using TwilightShards.libAstrogenesis;
+
+    using ILNumerics.Drawing;
+    using ILNumerics;
+    using ILNumerics.Drawing.Plotting;
 
     public partial class SectorMap : Form
     {
@@ -17,18 +21,46 @@ namespace TwilightShards.SectorGenerator
             InitializeComponent();
         }
 
-        private void SectorMap_Paint(object sender, PaintEventArgs e)
+        public void reDraw(float[,] givenLocs)
         {
-            Graphics graphicObj;
-            graphicObj = this.CreateGraphics();
+            ILArray<float> ourPositions = givenLocs;
 
-            Pen mPen = new Pen(System.Drawing.Color.White, 3);
-            mPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            var scene = new ILScene();
+            var plotCube = scene.Add(new ILPlotCube(null,false));
+                     
+            var ourPosBuffer = new ILPoints();
+            ourPosBuffer.Positions = ourPositions;
+            ourPosBuffer.Size = 5;
+            ourPosBuffer.Color = Color.White;
+            
+            plotCube.Add(ourPosBuffer);
+            plotCube.FieldOfView = 60;
+            plotCube.LookAt = new Vector3(0, 0, 0);
 
-            graphicObj.DrawLine(mPen, 1, 1, 1, 599);
-            graphicObj.DrawLine(mPen, 1, 1, 799, 1);
+            plotCube.ScaleModes.XAxisScale = AxisScale.Linear;
+            plotCube.ScaleModes.YAxisScale = AxisScale.Linear;
+            plotCube.ScaleModes.ZAxisScale = AxisScale.Linear;
 
+            //set label colors. This is all over the place.
+            var xLabel = plotCube.Axes.XAxis.Ticks.DefaultLabel;
+            xLabel.Color = Color.White;
 
+            var yLabel = plotCube.Axes.YAxis.Ticks.DefaultLabel;
+            yLabel.Color = Color.White;
+
+            var zLabel = plotCube.Axes.ZAxis.Ticks.DefaultLabel;
+            zLabel.Color = Color.White;
+
+            plotCube.Axes.XAxis.Label.Color = Color.White;
+            plotCube.Axes.YAxis.Label.Color = Color.White;
+            plotCube.Axes.ZAxis.Label.Color = Color.White;
+
+            //designed to create a starfield look.
+            iLStarChart.Scene = scene;
+            iLStarChart.BackColor = Color.Black;
+            iLStarChart.ForeColor = Color.White;
+            iLStarChart.Scene.Configure();
         }
+
     }
 }

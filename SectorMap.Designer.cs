@@ -28,21 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SectorMap));
+            this.iLStarChart = new ILNumerics.Drawing.ILPanel();
             this.SuspendLayout();
+            // 
+            // iLStarChart
+            // 
+            this.iLStarChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.iLStarChart.Driver = ILNumerics.Drawing.RendererTypes.GDI;
+            this.iLStarChart.Editor = null;
+            this.iLStarChart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iLStarChart.Location = new System.Drawing.Point(0, 0);
+            this.iLStarChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iLStarChart.Name = "iLStarChart";
+            this.iLStarChart.Rectangle = ((System.Drawing.RectangleF)(resources.GetObject("iLStarChart.Rectangle")));
+            this.iLStarChart.ShowUIControls = false;
+            this.iLStarChart.Size = new System.Drawing.Size(1454, 564);
+            this.iLStarChart.TabIndex = 0;
             // 
             // SectorMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1454, 564);
+            this.Controls.Add(this.iLStarChart);
             this.Name = "SectorMap";
             this.Text = "SectorMap";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SectorMap_Paint);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private ILNumerics.Drawing.ILPanel iLStarChart;
+
+
     }
 }

@@ -1,0 +1,21 @@
+[{
+    "galName":"Milky Way",
+    "innerFormationRadius": 0,
+    "barOuterEdge": 4000,
+    "outerFormationRadius": 110000,
+    "maxStellarDensity": 100
+    },
+{
+    "galName":"Brilliant Meridian",
+    "innerFormationRadius": 0,
+    "barOuterEdge": 4000,
+    "outerFormationRadius": 104000,
+    "maxStellarDensity": 100
+    },
+ {
+    "galName":"Hoag's Object",
+    "innerFormationRadius": 75000,
+    "barOuterEdge": 4000,
+    "outerFormationRadius": 125000,
+    "maxStellarDensity": 100
+ }]

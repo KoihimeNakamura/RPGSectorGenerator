@@ -1,0 +1,5 @@
+{
+  "chosenSize": 5,
+  "spaceBetweenStars": 1,
+  "maxTriesTimeout": 1000000
+}
